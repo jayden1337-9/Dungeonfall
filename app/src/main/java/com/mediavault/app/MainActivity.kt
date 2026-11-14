@@ -34,7 +34,7 @@ class MainActivity : Activity() {
         root.addView(status)
         val bar = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL }
         address = EditText(this).apply {
-            hint = "https://example.com/video"; singleLine = true; textSize = 14f
+            hint = "https://example.com/video"; setSingleLine(true); textSize = 14f
             setTextColor(Color.WHITE); setHintTextColor(0xff8993a8.toInt()); setPadding(dp(10), 0, dp(8), 0)
             setBackgroundColor(panel)
         }
