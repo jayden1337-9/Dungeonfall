@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="128" viewBox="0 0 256 128" shape-rendering="crispEdges">
+<defs>
+ <pattern id="grain" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#333b39"/><rect x="3" y="4" width="2" height="2" fill="#3c4541"/><rect x="11" y="10" width="2" height="2" fill="#27312f"/></pattern>
+</defs>
+<!-- 0 floor -->
+<g transform="translate(0 0)"><rect width="16" height="16" fill="#4a5148"/><rect x="2" y="3" width="2" height="2" fill="#5c6556"/><rect x="10" y="2" width="3" height="1" fill="#343d37"/><rect x="5" y="11" width="2" height="2" fill="#343d37"/><rect x="12" y="12" width="2" height="2" fill="#606856"/><rect x="0" y="15" width="16" height="1" fill="#303832"/></g>
+<!-- 1 wall -->
+<g transform="translate(16 0)"><rect width="16" height="16" fill="#202a2a"/><rect x="0" y="1" width="7" height="4" fill="#354241"/><rect x="8" y="1" width="8" height="4" fill="#2c3837"/><rect x="2" y="6" width="8" height="4" fill="#303c3a"/><rect x="11" y="6" width="5" height="4" fill="#3c4944"/><rect x="0" y="11" width="5" height="4" fill="#3a4642"/><rect x="6" y="11" width="8" height="4" fill="#2b3735"/><rect x="0" y="5" width="16" height="1" fill="#182120"/><rect x="0" y="10" width="16" height="1" fill="#182120"/></g>
+<!-- 2 stairs -->
+<g transform="translate(32 0)"><rect width="16" height="16" fill="#41483f"/><rect x="2" y="2" width="12" height="12" fill="#8b7953"/><rect x="3" y="3" width="10" height="2" fill="#d0b77b"/><rect x="4" y="6" width="8" height="2" fill="#b49b66"/><rect x="5" y="9" width="6" height="2" fill="#92794e"/><rect x="6" y="12" width="4" height="2" fill="#6d5a3c"/></g>
+<!-- 3 chest -->
+<g transform="translate(48 0)"><rect x="2" y="5" width="12" height="9" fill="#754729"/><rect x="1" y="4" width="14" height="3" fill="#a96e37"/><rect x="2" y="7" width="12" height="6" fill="#8a542e"/><rect x="7" y="7" width="2" height="7" fill="#d4ad58"/><rect x="6" y="9" width="4" height="3" fill="#e5c66d"/><rect x="1" y="13" width="14" height="2" fill="#493020"/></g>
+<!-- 4 player -->
+<g transform="translate(64 0)"><rect x="5" y="1" width="6" height="3" fill="#6e8d75"/><rect x="3" y="4" width="10" height="5" fill="#8eaa91"/><rect x="5" y="5" width="2" height="2" fill="#172521"/><rect x="10" y="5" width="2" height="2" fill="#172521"/><rect x="4" y="9" width="8" height="5" fill="#557c68"/><rect x="2" y="10" width="3" height="4" fill="#8eaa91"/><rect x="11" y="10" width="3" height="4" fill="#8eaa91"/><rect x="5" y="14" width="2" height="2" fill="#382f2c"/><rect x="9" y="14" width="2" height="2" fill="#382f2c"/></g>
+<!-- 5 slime -->
+<g transform="translate(80 0)"><rect x="3" y="6" width="10" height="7" fill="#70a65d"/><rect x="5" y="4" width="6" height="3" fill="#8bc873"/><rect x="4" y="10" width="2" height="2" fill="#e6f0c7"/><rect x="10" y="10" width="2" height="2" fill="#e6f0c7"/><rect x="5" y="10" width="1" height="1" fill="#26352b"/><rect x="11" y="10" width="1" height="1" fill="#26352b"/><rect x="2" y="13" width="12" height="2" fill="#416c43"/></g>
+<!-- 6 wisp -->
+<g transform="translate(96 0)"><rect x="6" y="2" width="4" height="3" fill="#c4e8df"/><rect x="3" y="5" width="10" height="6" fill="#75b8ba"/><rect x="4" y="11" width="8" height="3" fill="#4e929f"/><rect x="5" y="7" width="2" height="2" fill="#f0f4d9"/><rect x="10" y="7" width="2" height="2" fill="#f0f4d9"/><rect x="6" y="8" width="1" height="1" fill="#203b4a"/><rect x="11" y="8" width="1" height="1" fill="#203b4a"/><rect x="7" y="14" width="2" height="2" fill="#75b8ba"/></g>
+<!-- 7 shade -->
+<g transform="translate(112 0)"><rect x="4" y="3" width="8" height="3" fill="#8b79aa"/><rect x="2" y="6" width="12" height="7" fill="#63547e"/><rect x="4" y="13" width="8" height="2" fill="#413854"/><rect x="4" y="8" width="2" height="2" fill="#f1d7a2"/><rect x="10" y="8" width="2" height="2" fill="#f1d7a2"/><rect x="5" y="9" width="1" height="1" fill="#272336"/><rect x="11" y="9" width="1" height="1" fill="#272336"/></g>
+<!-- 8 potion -->
+<g transform="translate(128 0)"><rect x="6" y="1" width="4" height="3" fill="#d8c58c"/><rect x="5" y="4" width="6" height="2" fill="#a9a17c"/><rect x="3" y="6" width="10" height="8" fill="#9e3f4d"/><rect x="4" y="7" width="8" height="6" fill="#d35b63"/><rect x="5" y="8" width="2" height="3" fill="#f39a8a"/><rect x="2" y="13" width="12" height="2" fill="#5b3441"/></g>
+<!-- 9 crystal -->
+<g transform="translate(144 0)"><rect x="7" y="1" width="3" height="3" fill="#b7e9e9"/><rect x="4" y="4" width="8" height="6" fill="#53b9c4"/><rect x="5" y="10" width="6" height="4" fill="#347e9a"/><rect x="7" y="4" width="2" height="5" fill="#e0ffff"/><rect x="6" y="14" width="4" height="2" fill="#28536f"/></g>
+<!-- 10 key -->
+<g transform="translate(160 0)"><rect x="3" y="4" width="7" height="7" fill="#d7b75f"/><rect x="5" y="6" width="3" height="3" fill="#39413b"/><rect x="9" y="7" width="6" height="2" fill="#d7b75f"/><rect x="12" y="9" width="2" height="3" fill="#d7b75f"/><rect x="4" y="3" width="5" height="1" fill="#f2d98c"/></g>
+<!-- 11 coin -->
+<g transform="translate(176 0)"><rect x="4" y="2" width="8" height="2" fill="#f2d77c"/><rect x="2" y="4" width="12" height="8" fill="#d6a83d"/><rect x="4" y="12" width="8" height="2" fill="#94652e"/><rect x="6" y="5" width="4" height="6" fill="#ffe49a"/><rect x="7" y="6" width="2" height="4" fill="#b57c2e"/></g>
+<!-- 12 torch -->
+<g transform="translate(192 0)"><rect x="7" y="8" width="3" height="7" fill="#80502e"/><rect x="6" y="4" width="5" height="5" fill="#ef9d45"/><rect x="7" y="2" width="3" height="4" fill="#f6d56d"/><rect x="8" y="4" width="1" height="3" fill="#fff0ae"/></g>
+<!-- 13 door -->
+<g transform="translate(208 0)"><rect x="2" y="1" width="12" height="14" fill="#543923"/><rect x="4" y="3" width="8" height="12" fill="#98613a"/><rect x="7" y="4" width="1" height="10" fill="#c28a50"/><rect x="10" y="8" width="1" height="2" fill="#edcf77"/></g>
+<!-- 14 heart -->
+<g transform="translate(224 0)"><rect x="2" y="4" width="5" height="4" fill="#d84d59"/><rect x="9" y="4" width="5" height="4" fill="#d84d59"/><rect x="1" y="6" width="14" height="4" fill="#d84d59"/><rect x="3" y="10" width="10" height="2" fill="#d84d59"/><rect x="5" y="12" width="6" height="2" fill="#a72f45"/><rect x="4" y="5" width="2" height="2" fill="#ff9b9b"/></g>
+<!-- 15 portal -->
+<g transform="translate(240 0)"><rect x="5" y="1" width="6" height="2" fill="#b18ce4"/><rect x="3" y="3" width="10" height="10" fill="#8058b7"/><rect x="5" y="5" width="6" height="6" fill="#2d244e"/><rect x="7" y="7" width="2" height="2" fill="#d4b8ff"/><rect x="6" y="13" width="4" height="2" fill="#a88ad9"/></g>
+<!-- second row: wall trim / torch glow / alternate props -->
+<g transform="translate(0 16)"><rect width="16" height="16" fill="#273330"/><rect x="2" y="2" width="12" height="12" fill="#3e5047"/><rect x="3" y="3" width="10" height="10" fill="#526458"/><rect x="5" y="5" width="6" height="6" fill="#647665"/></g>
+<g transform="translate(16 16)"><rect width="16" height="16" fill="#202a2a"/><rect x="2" y="2" width="12" height="12" fill="#34423e"/><rect x="4" y="4" width="8" height="8" fill="#4a5a4e"/><rect x="7" y="7" width="2" height="2" fill="#8e9b74"/></g>
+<g transform="translate(32 16)"><rect width="16" height="16" fill="#343b34"/><rect x="3" y="3" width="10" height="10" fill="#78694c"/><rect x="5" y="5" width="6" height="6" fill="#c2a66c"/><rect x="7" y="7" width="2" height="2" fill="#f0dca3"/></g>
+</svg>
