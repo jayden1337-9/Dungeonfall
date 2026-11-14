@@ -1,52 +1,32 @@
-# Dungeonfall
+# MediaVault
 
-Dungeonfall is a Python-hosted browser RPG with a dynamic API and server-side JSON saves. The browser handles the real-time canvas rendering and controls; the Python backend serves the game, stores full dungeon saves, and exposes the game API.
+MediaVault is a native Android media browser and personal media library.
 
-## Run on Wispbyte
+## Current features
+- Built-in Android WebView browser
+- Best-effort detection of common direct media URLs requested by pages
+- Direct HTTP(S) media downloads to app-specific device storage
+- Basic VOD HLS playlist downloading for unencrypted MPEG-TS segment playlists
+- HLS and common file playback through AndroidX Media3
+- Persistent JSON library metadata
+- GitHub Actions debug APK build
 
-Keep these files together in the Wispbyte server folder:
+## Build an APK without Android Studio
+1. Open the repository's **Actions** tab.
+2. Select **Build MediaVault APK**.
+3. Run the workflow on the `main` branch.
+4. Open the completed run and download the `MediaVault-debug` artifact.
+5. Extract the ZIP and install `app-debug.apk` on Android.
 
-- `server.py`
-- `index.html`
-- `requirements.txt`
-- `assets/pixel-sprites.svg`
+Every push that changes the Android app or build files also starts the workflow.
 
-Set the startup command to:
+## Storage
+Downloaded files are kept in the app's external files directory under `MediaVault/`. The library index is stored as JSON in the app's private files directory. Android may remove app-specific files if the app is uninstalled; export/copy important media before uninstalling.
 
-```bash
-/usr/local/bin/python -m pip install -U --target /home/container/.python-packages -r /home/container/requirements.txt && /usr/local/bin/python /home/container/server.py
-```
+## Current limitations
+- Detection depends on WebView exposing a normal HTTP(S) request. It cannot see every source, including `blob:` URLs, and some redirects or service-worker paths may not be visible.
+- HLS offline saving currently supports completed, unencrypted VOD playlists with ordinary media segments. Live streams, encrypted streams, byte-range playlists, and fMP4 initialization maps are not downloaded.
+- Downloads are for media you own, have permission to save, or that is openly licensed. MediaVault does not bypass DRM, subscriptions, or access controls.
 
-The Python app binds to `0.0.0.0` and uses Wispbyte's `SERVER_PORT` or `PORT` environment variable (falling back to 8080). The health endpoint is `/api/health`.
-
-## Server-side saves
-
-Each browser profile receives a random player UUID. The UUID is kept in browser storage only; the actual game state is stored by the Python server as a JSON file under `data/saves/`. The save includes player stats, the current dungeon map, enemies, chests, and stairs. Saves are written with an atomic file replacement so an interrupted write does not truncate the previous save.
-
-The game autosaves while playing and also saves when descending floors or when the journey ends. Use the SAVE button for an immediate save. This prototype does not yet include accounts, password login, or a public leaderboard.
-
-## Controls
-
-- **WASD / Arrow keys:** move
-- **Space:** cast a spell
-- **Q:** use a healing potion
-- **E:** interact with nearby objects
-- Touch controls are available on mobile.
-
-## Pixel art
-
-The current repository includes an original pixel-art SVG spritesheet for the player, dungeon tiles, monsters, stairs, chests, and inventory icons.
-
-An additional CC0 reference asset source found during research is the [16x16 Puny Dungeon Tileset by Shade](https://opengameart.org/content/16x16-puny-dungeon-tileset). Its page identifies the art as CC0. The spritesheet currently in this repository is original project artwork rather than a copied download from that pack.
-
-## Local development
-
-Install the dependency and run:
-
-```bash
-python -m pip install -r requirements.txt
-python server.py
-```
-
-Then open `http://127.0.0.1:8080`.
-
+## Legacy Dungeonfall files
+The former Wispbyte Dungeonfall files are retained in the repository for now so the existing server folder is not unexpectedly broken. MediaVault itself is the Android project in `app/`.
