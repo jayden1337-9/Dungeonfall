@@ -7,6 +7,9 @@ from uuid import UUID
 import json
 import os
 import tempfile
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / ".python-packages"))
 
 from flask import Flask, jsonify, request, send_from_directory
 
