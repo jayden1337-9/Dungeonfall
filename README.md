@@ -1,54 +1,52 @@
 # Dungeonfall
 
-A self-contained browser dungeon crawler. No build step or package installation is required.
+Dungeonfall is a Python-hosted browser RPG with a dynamic API and server-side JSON saves. The browser handles the real-time canvas rendering and controls; the Python backend serves the game, stores full dungeon saves, and exposes the game API.
 
 ## Run on Wispbyte
 
-This repository includes `server.py`, a small Python web server for hosting Dungeonfall.
+Keep these files together in the Wispbyte server folder:
 
-1. Upload or clone the repository files into your Wispbyte server folder. Keep `server.py` and `index.html` together.
-2. Set the server's startup command to:
+- `server.py`
+- `index.html`
+- `requirements.txt`
+- `assets/pixel-sprites.svg`
 
-   ```bash
-   /usr/local/bin/python /home/container/server.py
-   ```
+Set the startup command to:
 
-3. Start the Wispbyte server and open its assigned website address.
+```bash
+/usr/local/bin/python -m pip install -U --target /home/container/.python-packages -r /home/container/requirements.txt && /usr/local/bin/python /home/container/server.py
+```
 
-The server binds to `0.0.0.0` and uses Wispbyte's `SERVER_PORT` or `PORT` environment variable. It falls back to port `8080` if neither is set. Visit `/health` on the website address to check that the server is responding.
+The Python app binds to `0.0.0.0` and uses Wispbyte's `SERVER_PORT` or `PORT` environment variable (falling back to 8080). The health endpoint is `/api/health`.
 
-No extra Python packages or requirements file are needed; the server uses Python's standard library.
+## Server-side saves
 
-## Play locally
+Each browser profile receives a random player UUID. The UUID is kept in browser storage only; the actual game state is stored by the Python server as a JSON file under `data/saves/`. The save includes player stats, the current dungeon map, enemies, chests, and stairs. Saves are written with an atomic file replacement so an interrupted write does not truncate the previous save.
 
-Open `index.html` in a modern browser, or serve this folder with any static web server.
+The game autosaves while playing and also saves when descending floors or when the journey ends. Use the SAVE button for an immediate save. This prototype does not yet include accounts, password login, or a public leaderboard.
 
 ## Controls
 
 - **WASD / Arrow keys:** move
-- **Space:** cast a short-range spell
+- **Space:** cast a spell
 - **Q:** use a healing potion
 - **E:** interact with nearby objects
 - Touch controls are available on mobile.
 
-## Features
+## Pixel art
 
-- Randomly generated dungeon layouts and floors
-- Slimes, wisps and shades
-- Chests, coins, relics, essence and potions
-- Experience, progression, health and floor descent
-- Browser-local save data using localStorage
-- Responsive layout and mobile controls
-- Procedural canvas visuals; no external image assets required
+The current repository includes an original pixel-art SVG spritesheet for the player, dungeon tiles, monsters, stairs, chests, and inventory icons.
 
-## Other hosting options
+An additional CC0 reference asset source found during research is the [16x16 Puny Dungeon Tileset by Shade](https://opengameart.org/content/16x16-puny-dungeon-tileset). Its page identifies the art as CC0. The spritesheet currently in this repository is original project artwork rather than a copied download from that pack.
 
-The site can also be hosted with GitHub Pages, Cloudflare Pages, Netlify or any ordinary web server. For GitHub Pages, set the repository Pages source to **GitHub Actions**.
+## Local development
 
-## Assets and attribution
+Install the dependency and run:
 
-The current build draws its dungeon tiles, characters, effects and interface procedurally in canvas/CSS. It does not redistribute third-party art or depend on hotlinked image files. Google Images is a discovery tool, not an asset licence; only add external art when its licence explicitly permits the intended use, and preserve the required attribution.
+```bash
+python -m pip install -r requirements.txt
+python server.py
+```
 
-## Saves
+Then open `http://127.0.0.1:8080`.
 
-Progress is saved in the current browser on the current device. Clearing browser site data will clear that local save. This version does not yet have accounts or server-side cross-device saves.
