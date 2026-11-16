@@ -54,6 +54,9 @@ class MainActivity : Activity() {
                 }
                 override fun onPageStarted(view: WebView?, url: String?, favicon: android.graphics.Bitmap?) {
                     currentReferer = url
+                    if (!url.isNullOrBlank() && (url.startsWith("https://") || url.startsWith("http://"))) {
+                        getSharedPreferences("browser", MODE_PRIVATE).edit().putString("last_url", url).apply()
+                    }
                     address.setText(url ?: "")
                 }
                 override fun shouldInterceptRequest(view: WebView?, request: WebResourceRequest?): WebResourceResponse? {
@@ -76,7 +79,10 @@ class MainActivity : Activity() {
         nav.addView(makeButton("LIBRARY") { showLibrary() }, LinearLayout.LayoutParams(0, dp(44), 1f))
         root.addView(nav)
         setContentView(root)
-        if (savedInstanceState == null) browser.loadUrl("https://example.com")
+        if (savedInstanceState == null) {
+            val lastUrl = getSharedPreferences("browser", MODE_PRIVATE).getString("last_url", null)
+            browser.loadUrl(lastUrl ?: "https://example.com")
+        }
     }
 
     private fun makeButton(label: String, action: () -> Unit) = Button(this).apply {
